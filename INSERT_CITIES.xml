@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'Cp1252'?>
+<UT>
+   <object class="oracle.dbtools.unit_test.testObjects.UtTest">
+      <test id="5852e130-bd7e-41e8-8394-570a40d4e489" name="INSERT_CITIES" obj_name="INSERT_CITIES" obj_owner="EDGE_TEST" obj_type="PROCEDURE" obj_call="" src_conn_name="IdeConnections%23EDGE_DB_TEST" coverage="false">
+         <arg id="8d36aecc-fd4d-44df-abc2-1e23b9110bb2" owner="EDGE_TEST" object_name="INSERT_CITIES" object_id="20266" argument_name="CITY_ID" position="1" sequence="1" data_level="0" data_type="NUMBER" in_out="IN" data_length="22" radix="10" pls_type="NUMBER" char_length="0" char_used="0"/>
+         <arg id="28326602-6f2f-489d-b5c0-4a06bc0cc4a4" owner="EDGE_TEST" object_name="INSERT_CITIES" object_id="20266" argument_name="CITY" position="2" sequence="2" data_level="0" data_type="VARCHAR2" in_out="IN" character_set_name="CHAR_CS" pls_type="VARCHAR2" char_used="B"/>
+         <arg id="28fb3927-ece6-4e85-8c67-339c68212fd1" owner="EDGE_TEST" object_name="INSERT_CITIES" object_id="20266" argument_name="COUNTRY_ABRV" position="3" sequence="3" data_level="0" data_type="VARCHAR2" in_out="IN" character_set_name="CHAR_CS" pls_type="VARCHAR2" char_used="B"/>
+         <startup id="9620ced5-9e5d-4d47-bf6e-d8bc707456d5">
+            <startup>
+               <class>oracle.dbtools.unit_test.startup.TableCopyStartup</class>
+               <name>Table or Row Copy</name>
+               <description>"TMP$INSERT_CITIES_test" := SELECT ROWID AS SRC$ROWID, s.* FROM "CITIES" s </description>
+               <source>"CITIES"</source>
+               <predicate/>
+               <temp>"TMP$INSERT_CITIES_test"</temp>
+            </startup>
+         </startup>
+         <test_impl id="f1b4a12c-ddc4-4d0b-b05e-1cfacc6342cb" test_id="5852e130-bd7e-41e8-8394-570a40d4e489" name="Test Implementation 1" expected_ret="Success" expected_err="ANY">
+            <parm argId="28326602-6f2f-489d-b5c0-4a06bc0cc4a4" utiId="f1b4a12c-ddc4-4d0b-b05e-1cfacc6342cb" input_value="&lt;?xml version = '1.0' encoding = 'UTF-8'?>&#xD;&#xA;&lt;DataValue name=&quot;CITY&quot;>delhi&lt;/DataValue>" test_out_val="true"/>
+            <parm argId="28fb3927-ece6-4e85-8c67-339c68212fd1" utiId="f1b4a12c-ddc4-4d0b-b05e-1cfacc6342cb" input_value="&lt;?xml version = '1.0' encoding = 'UTF-8'?>&#xD;&#xA;&lt;DataValue name=&quot;COUNTRY_ABRV&quot;>01&lt;/DataValue>" test_out_val="true"/>
+            <parm argId="8d36aecc-fd4d-44df-abc2-1e23b9110bb2" utiId="f1b4a12c-ddc4-4d0b-b05e-1cfacc6342cb" input_value="&lt;?xml version = '1.0' encoding = 'UTF-8'?>&#xD;&#xA;&lt;DataValue name=&quot;CITY_ID&quot;>1&lt;/DataValue>" test_out_val="true"/>
+            <validation id="290b1825-782e-40f8-a1f5-5cdeba703680" apply="true">
+               <validation>
+                  <class>oracle.dbtools.unit_test.process_validation.QueryReturningNoRows</class>
+                  <name>Query returning no row(s)</name>
+                  <description>-- Please specify a query you expect to return zero
+-- rows. For example:
+SELECT NULL FROM dual WHERE NULL IS NOT NULL
+</description>
+                  <code>-- Please specify a query you expect to return zero
+-- rows. For example:
+SELECT NULL FROM dual WHERE NULL IS NOT NULL
+</code>
+               </validation>
+            </validation>
+         </test_impl>
+      </test>
+   </object>
+</UT>

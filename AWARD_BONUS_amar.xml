@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'Cp1252'?>
+<UT>
+   <object class="oracle.dbtools.unit_test.testObjects.UtTest">
+      <test id="0c699c2a-41b0-4abe-ae8a-d4759e0cf312" name="AWARD_BONUS_amar" obj_name="AWARD_BONUS" obj_owner="AMAR" obj_type="PROCEDURE" obj_call="" src_conn_name="IdeConnections%23amar_user" coverage="true">
+         <arg id="2ec85d11-e937-4a23-923b-c7b02e06b84c" owner="AMAR" object_name="AWARD_BONUS" object_id="20339" argument_name="EMP_ID" position="1" sequence="1" data_level="0" data_type="NUMBER" in_out="IN" data_length="22" radix="10" pls_type="NUMBER" char_length="0" char_used="0"/>
+         <arg id="7bf410b6-5f9b-47ea-aee8-4ead2ae77a0d" owner="AMAR" object_name="AWARD_BONUS" object_id="20339" argument_name="SALES_AMT" position="2" sequence="2" data_level="0" data_type="NUMBER" in_out="IN" data_length="22" radix="10" pls_type="NUMBER" char_length="0" char_used="0"/>
+         <startup id="795a37a8-4bfd-4ea0-aedc-889f34f4c5fe">
+            <startup>
+               <class>oracle.dbtools.unit_test.startup.PlSqlStartup</class>
+               <name>User PL/Sql Code</name>
+               <description>-- Please specify any code you want to run before the
+-- test operation is called. For example:
+BEGIN
+    NULL; -- do something
+END;
+</description>
+               <code>-- Please specify any code you want to run before the
+-- test operation is called. For example:
+BEGIN
+    NULL; -- do something
+END;
+</code>
+            </startup>
+         </startup>
+         <test_impl id="1566a5d2-faeb-405b-b675-a515a2152192" test_id="0c699c2a-41b0-4abe-ae8a-d4759e0cf312" name="Test Implementation 1" expected_ret="Success" expected_err="ANY">
+            <parm argId="2ec85d11-e937-4a23-923b-c7b02e06b84c" utiId="1566a5d2-faeb-405b-b675-a515a2152192" input_value="&lt;?xml version = '1.0' encoding = 'UTF-8'?>&#xD;&#xA;&lt;DataValue name=&quot;EMP_ID&quot;>150&lt;/DataValue>" test_out_val="true"/>
+            <parm argId="7bf410b6-5f9b-47ea-aee8-4ead2ae77a0d" utiId="1566a5d2-faeb-405b-b675-a515a2152192" input_value="&lt;?xml version = '1.0' encoding = 'UTF-8'?>&#xD;&#xA;&lt;DataValue name=&quot;SALES_AMT&quot;>1000&lt;/DataValue>" test_out_val="true"/>
+            <validation id="1a224d2a-4479-4eaf-bbf1-5b169b37bfad" apply="true">
+               <validation>
+                  <class>oracle.dbtools.unit_test.process_validation.PlSqlValidation</class>
+                  <name>User PL/Sql Code</name>
+                  <description>-- Please raise an exception if the validation fails.
+-- For example:
+DECLARE
+    l_count NUMBER;
+    wrong_count EXCEPTION;
+BEGIN
+    SELECT count(*) INTO l_count FROM dual;
+    IF l_count = 0
+    THEN
+        RAISE wrong_count;
+    END IF;
+END;
+</description>
+                  <code>-- Please raise an exception if the validation fails.
+-- For example:
+DECLARE
+    l_count NUMBER;
+    wrong_count EXCEPTION;
+BEGIN
+    SELECT count(*) INTO l_count FROM dual;
+    IF l_count = 0
+    THEN
+        RAISE wrong_count;
+    END IF;
+END;
+</code>
+               </validation>
+            </validation>
+         </test_impl>
+      </test>
+   </object>
+</UT>

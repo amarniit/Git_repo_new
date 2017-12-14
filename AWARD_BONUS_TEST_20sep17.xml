@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'Cp1252'?>
+<UT>
+   <object class="oracle.dbtools.unit_test.testObjects.UtTest">
+      <test id="16404ed5-cda2-40bb-abe1-a3867362cea1" name="AWARD_BONUS_TEST_20sep17" obj_name="AWARD_BONUS" obj_owner="EDGE_TEST" obj_type="PROCEDURE" obj_call="" src_conn_name="IdeConnections%23EDGE_DB_TEST" coverage="true">
+         <arg id="e7057d53-025d-4364-9f6e-6797958305b1" owner="EDGE_TEST" object_name="AWARD_BONUS" object_id="20260" argument_name="EMP_ID" position="1" sequence="1" data_level="0" data_type="NUMBER" in_out="IN" data_length="22" radix="10" pls_type="NUMBER" char_length="0" char_used="0"/>
+         <arg id="ceaf3e24-9f30-42d9-87d7-b2b419348e5b" owner="EDGE_TEST" object_name="AWARD_BONUS" object_id="20260" argument_name="SALES_AMT" position="2" sequence="2" data_level="0" data_type="NUMBER" in_out="IN" data_length="22" radix="10" pls_type="NUMBER" char_length="0" char_used="0"/>
+         <startup id="066dd300-f726-4497-8d33-5b5baea7eb20">
+            <startup>
+               <class>oracle.dbtools.unit_test.startup.TableCopyStartup</class>
+               <name>Table or Row Copy</name>
+               <description>"TMP$AWARD_BONUS_TEST_20sep17" := SELECT ROWID AS SRC$ROWID, s.* FROM employees2 s </description>
+               <source>employees2</source>
+               <predicate/>
+               <temp>"TMP$AWARD_BONUS_TEST_20sep17"</temp>
+            </startup>
+         </startup>
+         <teardown id="b61fbe02-8457-4590-a209-2af273ed961e">
+            <teardown>
+               <class>oracle.dbtools.unit_test.teardown.TableRestoreTeardown</class>
+               <name>Table or Row Restore</name>
+               <description>"TMP$AWARD_BONUS_TEST_20sep17" -> employees2</description>
+               <source>employees2</source>
+               <key>PRIMARY KEY</key>
+               <temp>"TMP$AWARD_BONUS_TEST_20sep17"</temp>
+               <predicate/>
+               <dropTempTable>yes</dropTempTable>
+            </teardown>
+         </teardown>
+         <test_impl id="d93cbb29-79ca-4517-aaae-3934972e808d" test_id="16404ed5-cda2-40bb-abe1-a3867362cea1" name="Test Implementation 1" expected_ret="Success" expected_err="ANY">
+            <parm argId="ceaf3e24-9f30-42d9-87d7-b2b419348e5b" utiId="d93cbb29-79ca-4517-aaae-3934972e808d" input_value="&lt;?xml version = '1.0' encoding = 'UTF-8'?>&#xD;&#xA;&lt;DataValue name=&quot;SALES_AMT&quot;>10000&lt;/DataValue>" test_out_val="true"/>
+            <parm argId="e7057d53-025d-4364-9f6e-6797958305b1" utiId="d93cbb29-79ca-4517-aaae-3934972e808d" input_value="&lt;?xml version = '1.0' encoding = 'UTF-8'?>&#xD;&#xA;&lt;DataValue name=&quot;EMP_ID&quot;>145&lt;/DataValue>" test_out_val="true"/>
+            <validation id="9ed0dd97-7452-4312-8bc3-c07508305b71" apply="true">
+               <validation>
+                  <class>oracle.dbtools.unit_test.process_validation.QueryReturningNoRows</class>
+                  <name>Query returning no row(s)</name>
+                  <description>-- Please specify a query you expect to return zero
+-- rows. For example:
+SELECT NULL FROM dual WHERE NULL IS NOT NULL
+</description>
+                  <code>-- Please specify a query you expect to return zero
+-- rows. For example:
+SELECT NULL FROM dual WHERE NULL IS NOT NULL
+</code>
+               </validation>
+            </validation>
+         </test_impl>
+      </test>
+   </object>
+</UT>
